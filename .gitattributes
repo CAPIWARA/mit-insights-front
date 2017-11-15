@@ -1,0 +1,5 @@
+# Define automaticamente as quebras de linhas no padrão Unix.
+* text=auto eol=lf
+
+# O Yarn resolve os conflitos no arquivo lock de forma automática.
+yarn.lock -diff

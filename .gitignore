@@ -1,0 +1,14 @@
+# Módulos do Node.js
+node_modules/
+
+# Arquivos de distribuição
+dist/
+
+# O .env nunca deve ser versionado
+.env
+
+# Arquivos de Log
+*.log
+
+# Arquivos do MacOSX
+.DS_Store
