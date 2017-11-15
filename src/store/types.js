@@ -35,3 +35,8 @@ export const USER_CREATE = 'user/USER_CREATE'
  * Tipos da Store de imóveis.
  */
 export const PROPERTY = 'property/PROPERTY'
+
+/**
+ * Tipos da Store de documents.
+ */
+export const DOCUMENTS = 'documents/DOCUMENTS'

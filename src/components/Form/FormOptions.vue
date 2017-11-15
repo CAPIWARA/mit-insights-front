@@ -1,7 +1,12 @@
 <template>
   <fieldset class="form-options">
-    <fieldset v-for="(option, index) in options" :key="index">
+    <fieldset
+      v-for="(option, index) in options"
+      class="option"
+      :key="index"
+    >
       <input
+        class="input"
         type="radio"
         :id="'option-' + index"
         :name="name"
@@ -9,7 +14,7 @@
         :checked="option.value === value"
         @change="change(option.value)"
       />
-      <label :for="'option-' + index">{{ option.label }}</label>
+      <label class="toggler" :for="'option-' + index">{{ option.label }}</label>
     </fieldset>
   </fieldset>
 </template>
@@ -34,13 +39,38 @@ export default {
 </script>
 
 <style lang="scss">
-fieldset {
-  & > input[type="radio"] { display: none; }
-
-  & > input[type="radio"] + label {
-    background-color: $color-default;
+.form-options {
+  & > .option {
+    @extend %form-option;
+    display: inline-flex;
   }
 
-  & > input[type="radio"]:checked + label { background-color: $color-primary; }
+  & > .option + .option { margin-left: 20px; }
+}
+
+%form-option {
+  & {
+    min-width: 150px;
+  }
+
+  & > .input {
+    display: none;
+  }
+
+  & > .toggler {
+    width: 100%;
+    padding: 20px 10px;
+    font-size: $base-font-size - 4px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    border-radius: 25px;
+    background-color: $color-default;
+    transition: background-color ease-in .3s;
+  }
+
+  & > .input:checked + .toggler {
+    background-color: $color-primary;
+  }
 }
 </style>

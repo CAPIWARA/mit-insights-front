@@ -1,25 +1,35 @@
 <template>
-  <form @submit.prevent="submit">
-    <fieldset>
-      <label>E-Mail</label>
-      <input v-model="email" type="email" />
-    </fieldset>
-    <fieldset>
-      <label>Nome</label>
-      <input v-model="name" type="text" />
-    </fieldset>
-    <fieldset>
-      <label>Senha</label>
-      <input v-model="password" type="password" />
-    </fieldset>
-    <button :disabled="!name || !email || !password" type="submit">Okay</button>
-  </form>
+  <main>
+    <figure class="logo">
+      <img class="image" src="~../../assets/logo.png" alt="Feel Clicks" />
+    </figure>
+    <form-container :valid="!!(email && name && password)" @submit="submit()">
+      <form-field
+        v-model="email"
+        label="E-Mail"
+        type="email"
+      />
+      <form-field
+        v-model="name"
+        label="Nome"
+        type="text"
+      />
+      <form-field
+        v-model="password"
+        label="Senha"
+        type="password"
+      />
+    </form-container>
+  </main>
 </template>
 
 <script>
 import * as types from '../../store/types'
+import FormContainer from '../Form/FormContainer'
+import FormField from '../Form/FormField'
 
 export default {
+  components: { FormContainer, FormField },
   data () {
     return {
       name: '',
@@ -41,3 +51,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.logo {
+  width: 100%;
+
+  & > .image {
+    max-width: 600px;
+    margin: auto;
+    display: block;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
+</style>
+

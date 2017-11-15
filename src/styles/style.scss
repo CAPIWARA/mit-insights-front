@@ -10,3 +10,17 @@
 
 html,
 body { height: 100%; }
+
+body,
+input {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}
+
+fieldset {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
