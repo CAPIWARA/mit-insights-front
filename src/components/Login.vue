@@ -6,18 +6,20 @@
         <label for="email">E-Mail</label>
         <input
           v-model="email"
-          type="email"
           id="email"
-          placeholder="Ex. rodrigo.silva@gmail.com" />
+          type="email"
+          placeholder="Ex. rodrigo.silva@gmail.com"
+        />
       </fieldset>
 
       <fieldset>
         <label for="password">Senha</label>
         <input
           v-model="password"
+          id="password"
           type="password"
-          name="password"
-          placeholder="Ex. ••••••••" />
+          placeholder="Ex. ••••••••"
+        />
       </fieldset>
 
       <fieldset>

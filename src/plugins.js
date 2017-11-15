@@ -1,5 +1,7 @@
 import Validate from 'vee-validate'
 import axios from 'axios'
+import store from '@store'
+import { AUTH_TOKEN } from '@store/types'
 
 axios.interceptors.request.use((config) => {
   const token = store.getters[AUTH_TOKEN]
