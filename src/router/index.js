@@ -7,16 +7,13 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/login',
-      name: 'Login',
-      component: () => import('@components/Login')
-    },
-    {
-      path: '/steps',
+      path: '/step',
+      alias: '/',
       component: () => import('@components/Steps'),
       children: [
         {
           path: '1',
+          alias: '',
           name: 'Step 1',
           component: () => import('@components/Steps/Step1')
         },
@@ -39,6 +36,11 @@ export default new Router({
           path: '5',
           name: 'Step 5',
           component: () => import('@components/Steps/Step5')
+        },
+        {
+          path: '6',
+          name: 'Step 6',
+          component: () => import('@components/Steps/Step6')
         }
       ]
     }

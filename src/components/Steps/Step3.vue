@@ -1,12 +1,10 @@
 <template>
-  <main>
-    <form-container @submit="submit()" :valid="!!(cpf && rg && comprovante && holerites)">
-      <form-file v-model="rg" label="RG" />
-      <form-file v-model="cpf" label="CPF" />
-      <form-file v-model="comprovante" label="Comprovante de Residência" />
-      <form-file v-model="holerites" label="Holerites" />
-    </form-container>
-  </main>
+  <form-container @submit="submit()" :valid="!!(cpf && rg && comprovante && holerites)">
+    <form-file v-model="rg" label="RG" />
+    <form-file v-model="cpf" label="CPF" />
+    <form-file v-model="comprovante" label="Comprovante de Residência" />
+    <form-file v-model="holerites" label="Holerites" />
+  </form-container>
 </template>
 
 <script>

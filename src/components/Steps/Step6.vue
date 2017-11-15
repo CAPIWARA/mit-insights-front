@@ -1,10 +1,9 @@
 <template>
   <form-container @submit="submit()" valid>
-    <img src="~../../assets/check.png" class="figure" />
+    <img src="~../../assets/file.png" class="figure" />
     <div class="text">
-      <p>Cliquei <a href="static/Documento.pdf" download>aqui</a> para baixar seu contrato</p>
-      <p><strong>NÃO SE ESQUEÇA!</strong></p>
-      <p>Você tem até <strong>7 dias úteis</strong> para<br> prencher o contrato</p>
+      <p>Pensando em você, nós cuidamos disso</p>
+      <p>Cliquei <a>aqui</a> para acompanhar <br>seu status de registro</p>
     </div>
   </form-container>
 </template>
@@ -18,7 +17,7 @@ export default {
   methods: {
     submit () {
       this.$store.dispatch(types.STEPS_NEXT)
-      this.$router.push('6')
+      this.$router.push('7')
     }
   }
 }
@@ -28,7 +27,7 @@ export default {
 .figure {
   display: block;
   width: 60%;
-  margin: 90px auto;
+  margin: 60px auto;
 }
 
 .text {
@@ -44,4 +43,5 @@ a {
   width: 100%;
   height: 100%;
 }
+
 </style>

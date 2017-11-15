@@ -1,26 +1,21 @@
 <template>
-  <main>
-    <figure class="logo">
-      <img class="image" src="~../../assets/logo.png" alt="Feel Clicks" />
-    </figure>
-    <form-container :valid="!!(email && name && password)" @submit="submit()">
-      <form-field
-        v-model="email"
-        label="E-Mail"
-        type="email"
-      />
-      <form-field
-        v-model="name"
-        label="Nome"
-        type="text"
-      />
-      <form-field
-        v-model="password"
-        label="Senha"
-        type="password"
-      />
-    </form-container>
-  </main>
+  <form-container :valid="!!(email && name && password)" @submit="submit()">
+    <form-field
+      v-model="email"
+      label="E-Mail"
+      type="email"
+    />
+    <form-field
+      v-model="name"
+      label="Nome"
+      type="text"
+    />
+    <form-field
+      v-model="password"
+      label="Senha"
+      type="password"
+    />
+  </form-container>
 </template>
 
 <script>
@@ -51,20 +46,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.logo {
-  width: 100%;
-
-  & > .image {
-    max-width: 600px;
-    margin: auto;
-    display: block;
-
-    @media screen and (max-width: 600px) {
-      width: 100%;
-    }
-  }
-}
-</style>
-

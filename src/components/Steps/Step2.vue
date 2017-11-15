@@ -1,34 +1,32 @@
 <template>
-  <main>
-    <form-container @submit="submit" :valid="method == '1' || !!(method && time && bank)">
-      <form-field label="Qual a forma de pagamento?">
-        <form-options
-          name="payment-method"
-          v-model="method"
-          :options="methods"
-        />
-      </form-field>
-      <form-field label="Em quanto tempo você espera pagar?">
-        <select v-model="time">
-          <option
-            v-for="time in times"
-            :key="time.id"
-            :value="time.id"
-          >{{ time.label }}</option>
-          </option>
-        </select>
-      </form-field>
-      <form-field label="Qual seu banco de preferencia?">
-        <select v-model="bank">
-          <option
-            v-for="bank in banks"
-            :key="bank.id"
-            :value="bank.id"
-          >{{ bank.name }}</option>
-        </select>
-      </form-field>
-    </form-container>
-  </main>
+  <form-container @submit="submit" :valid="method == '1' || !!(method && time && bank)">
+    <form-field label="Qual a forma de pagamento?">
+      <form-options
+        name="payment-method"
+        v-model="method"
+        :options="methods"
+      />
+    </form-field>
+    <form-field label="Em quanto tempo você espera pagar?">
+      <select v-model="time">
+        <option
+          v-for="time in times"
+          :key="time.id"
+          :value="time.id"
+        >{{ time.label }}</option>
+        </option>
+      </select>
+    </form-field>
+    <form-field label="Qual seu banco de preferencia?">
+      <select v-model="bank">
+        <option
+          v-for="bank in banks"
+          :key="bank.id"
+          :value="bank.id"
+        >{{ bank.name }}</option>
+      </select>
+    </form-field>
+  </form-container>
 </template>
 
 <script>
